@@ -55,7 +55,7 @@
                 height:40%;
                 box-shadow: 5px 5px 50px black;
                 padding:2%;
-                word-wrap: break-word;
+                overflow:auto;
                 
             }
             #section-1,#section-3{
@@ -116,7 +116,7 @@
                 color:rgb(150,150,150);
                 width:40%;
                 font-family: monospace;
-                height:auto;
+                height:100%;
             }
 
         </style>
@@ -192,20 +192,28 @@
                 <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a>.
             </div>
         </div>
-        <script type = "text/javascript">
+                <script type = "text/javascript">
            flexFont = function () {
                 var divs = document.getElementsByClassName("sections");
                     for(var i = 0; i < divs.length; i++) {
-                            var relFontsize = divs[i].offsetWidth*0.016;
-                            divs[i].style.fontSize = relFontsize+'px';
+                            var relFontsize = divs[i].offsetHeight*0.5;
+                            divs[i].style.fontSize = relFontsize+'%';
                         }
                     };
 
+            flexContents = function(){
+                var divs = document.getElementsByClassName("sections").style.height = "40%";
+                //var dynamicHeight = window.innerHeight * 0.4;
+                
+            }
+
                     window.onload = function(event) {
                         flexFont();
+                        //flexContents();
                     };
                     window.onresize = function(event) {
                         flexFont();
+                        //flexContents();
                 };
         </script>
     </body>
