@@ -55,7 +55,6 @@
                 height:40%;
                 box-shadow: 5px 5px 50px black;
                 padding:2%;
-                overflow:auto;
                 
             }
             #section-1,#section-3{
@@ -196,7 +195,7 @@
            flexFont = function () {
                 var divs = document.getElementsByClassName("sections");
                     for(var i = 0; i < divs.length; i++) {
-                            var relFontsize = divs[i].offsetHeight*0.5;
+                            var relFontsize = divs[i].offsetHeight*0.3;
                             divs[i].style.fontSize = relFontsize+'%';
                         }
                     };
