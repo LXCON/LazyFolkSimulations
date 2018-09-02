@@ -55,6 +55,7 @@
                 height:40%;
                 box-shadow: 5px 5px 50px black;
                 padding:2%;
+                word-wrap: break-word;
                 
             }
             #section-1,#section-3{
@@ -115,6 +116,7 @@
                 color:rgb(150,150,150);
                 width:40%;
                 font-family: monospace;
+                height:auto;
             }
 
         </style>
@@ -194,7 +196,7 @@
            flexFont = function () {
                 var divs = document.getElementsByClassName("sections");
                     for(var i = 0; i < divs.length; i++) {
-                            var relFontsize = divs[i].offsetWidth*0.015;
+                            var relFontsize = divs[i].offsetWidth*0.016;
                             divs[i].style.fontSize = relFontsize+'px';
                         }
                     };
