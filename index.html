@@ -51,8 +51,11 @@
             }
 
             .sections{
+                width:100%;
                 height:40%;
                 box-shadow: 5px 5px 50px black;
+                padding:2%;
+                
             }
             #section-1,#section-3{
                 background-color:rgb(50,50,50);
@@ -72,14 +75,14 @@
 
             .headDivision{
                 position:absolute;
-                opacity:1;
                 text-align: center;
-                left:0%;
-                top:20%;
                 width:100%;
+                top:25%;
                 color:black;
+                
             }
             #Header{
+                
                 color: #fff;
                 font-size: 140%;
                 letter-spacing: 10px;
@@ -96,7 +99,7 @@
                 font-style:bold;
                 text-shadow: 5px 5px 5px black;
                 text-align: center;
-                top:50%;
+                padding:15%;
                 position:relative;
 
             }
@@ -107,15 +110,11 @@
                 letter-spacing: 10px;
             }
             .notes{
+                display: block;
                 float:left;
                 color:rgb(150,150,150);
-                padding:2%;
                 width:40%;
-                font-size:1.5vw;
-                position:relative;
-                font-family: sans-serif;
-                letter-spacing: 3px;
-                word-wrap: nowrap;
+                font-family: monospace;
             }
 
         </style>
@@ -130,7 +129,7 @@
 
         <div class = "parallax" id = "parallax-1">
             <div class = "headDivision">
-                <img id = "Logo" src = "mediaRes/img/school_logo.png" width = "15%" height="15%" style = "border-radius: 25px;"><br><br>
+                <img id = "Logo" src = "mediaRes/img/school_logo.png" width = "15%" height="15%" style = "border-radius: 20%;"><br><br>
             <span id = "Header">
                 <h1>Computer University Kengtung</h1>
             </span>
@@ -191,5 +190,21 @@
                 <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a>.
             </div>
         </div>
+        <script type = "text/javascript">
+           flexFont = function () {
+                var divs = document.getElementsByClassName("sections");
+                    for(var i = 0; i < divs.length; i++) {
+                            var relFontsize = divs[i].offsetWidth*0.015;
+                            divs[i].style.fontSize = relFontsize+'px';
+                        }
+                    };
+
+                    window.onload = function(event) {
+                        flexFont();
+                    };
+                    window.onresize = function(event) {
+                        flexFont();
+                };
+        </script>
     </body>
 </html>
