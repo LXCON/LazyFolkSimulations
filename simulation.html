@@ -604,7 +604,7 @@
         function draw(){
             var timer = Date.now()*timerSpeed.TimerSpeedUp;
             asteroidBelt.rotation.y = timer*(normalRotationSpeed*0.03);
-            saturn_ring.rotation.z = timer*oneKms;
+            saturn_ring.rotation.z += 0.001;
             orbitThePath(0, timer, sun, 0, normalRotationSpeed*0.01);
             orbitThePath(mercuryData.distanceFromSun, timer, mercury, mercuryData.orbitSpeed, mercuryData.rotationSpeed);
             orbitThePath(venusData.distanceFromSun, timer, venus, venusData.orbitSpeed, venusData.rotationSpeed);
@@ -665,6 +665,7 @@
             }
             else{
                 
+                controls.update();
             }
 
 
