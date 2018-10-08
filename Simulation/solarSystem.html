@@ -2,24 +2,24 @@
 <html lang = "en">
 	<head>
     <title>SolarSystem | Simulation</title>
-    <link rel = "stylesheet" type = "text/css" href = "css/navBar.css">
+    <link rel = "stylesheet" type = "text/css" href = "../css/navBar.css">
     <meta charset="UTF-8">
 		<style>
       @font-face{
                 font-family:Monoton;
-                src:url(mediaRes/font/Monoton.ttf);
+                src:url(../mediaRes/font/Monoton.ttf);
             }
             @font-face{
                 font-family:PoiretOne;
-                src:url(mediaRes/font/PoiretOne.ttf);
+                src:url(../mediaRes/font/PoiretOne.ttf);
             }
             @font-face{
                 font-family:Orbitron;
-                src:url(mediaRes/font/Orbitron.ttf);
+                src:url(../mediaRes/font/Orbitron.ttf);
             }
             @font-face{
                 font-family:Roboto;
-                src:url(mediaRes/font/Roboto.ttf);
+                src:url(../mediaRes/font/Roboto.ttf);
             }
 			body { margin: 0;
                     overflow:hidden;}
@@ -57,9 +57,9 @@
 	</head>
 	<body>
       <ul id = "navBar">
-          <li class = "navList"><a class="links" href="index.html">Home</a></li>
-          <li class = "navList"><a class = "links" href="simulation.html">Simulation</a></li>
-          <li class = "navList"><a class = "links" href="about.html">About</a></li>
+          <li class = "navList"><a class="links" href="../index.html">Home</a></li>
+          <li class = "navList"><a class = "links" href="../simulation.html">Simulation</a></li>
+          <li class = "navList"><a class = "links" href="../about.html">About</a></li>
       </ul>
       <div id = "ui-container">
       </div>
@@ -106,9 +106,9 @@
                 Neptune (30.1 AU), though slightly smaller than Uranus, is more massive (equivalent to 17 Earths) and hence more dense. It radiates more internal heat, but not as much as Jupiter or Saturn.[95] Neptune has 14 known satellites. The largest, Triton, is geologically active, with geysers of liquid nitrogen.
             </div>
       
-    <script src="libraries/three.js"></script>
-    <script src="libraries/OrbitControls.js"></script>
-    <script src="libraries/dat.gui.min.js"></script>
+    <script src="../libraries/three.js"></script>
+    <script src="../libraries/OrbitControls.js"></script>
+    <script src="../libraries/dat.gui.min.js"></script>
     <script>
 
         var scene, camera, renderer, pointLight, controls;
@@ -379,9 +379,9 @@
         function getSkybox(){
             var sceneTexture,skybox;
             sceneTexture = [
-               'mediaRes/cubeMap/px.png','mediaRes/cubeMap/nx.png',
-               'mediaRes/cubeMap/py.png','mediaRes/cubeMap/ny.png',
-               'mediaRes/cubeMap/pz.png','mediaRes/cubeMap/nz.png'
+               '../mediaRes/cubeMap/px.png','../mediaRes/cubeMap/nx.png',
+               '../mediaRes/cubeMap/py.png','../mediaRes/cubeMap/ny.png',
+               '../mediaRes/cubeMap/pz.png','../mediaRes/cubeMap/nz.png'
             ];
 
             skybox = new THREE.CubeTextureLoader().load(sceneTexture);
@@ -461,7 +461,7 @@
 
             spriteMaterial = new THREE.SpriteMaterial(
             {
-                map: new THREE.TextureLoader().load("mediaRes/textures/glow.png")
+                map: new THREE.TextureLoader().load("../mediaRes/textures/glow.png")
                 , color: 0xffffee
                 , transparent: true
                 , blending: THREE.AdditiveBlending
@@ -543,26 +543,26 @@
             camera.position.z = 200;
             controls.update();
 
-            sun = createSun(27, 50, 'mediaRes/textures/sun.png');
+            sun = createSun(27, 50, '../mediaRes/textures/sun.png');
 
-            mercury = createPlanet(2.5, 50, 'mediaRes/textures/mercury.png', mercuryData.distanceFromSun, 0, 0 );
+            mercury = createPlanet(2.5, 50, '../mediaRes/textures/mercury.png', mercuryData.distanceFromSun, 0, 0 );
 
-            venus = createPlanet(2.9,50,'mediaRes/textures/venus.png', venusData.distanceFromSun, 0, 0);
+            venus = createPlanet(2.9,50,'../mediaRes/textures/venus.png', venusData.distanceFromSun, 0, 0);
 
-            earth = createPlanet(4, 50, 'mediaRes/textures/earth.png', earthData.distanceFromSun, 0, 0);
-            luna = createPlanet(0.7, 50, 'mediaRes/textures/moon.png', 0,0,0);
+            earth = createPlanet(4, 50, '../mediaRes/textures/earth.png', earthData.distanceFromSun, 0, 0);
+            luna = createPlanet(0.7, 50, '../mediaRes/textures/moon.png', 0,0,0);
 
-            mars = createPlanet(3.5, 50, 'mediaRes/textures/mars.png', marsData.distanceFromSun, 0, 0);
+            mars = createPlanet(3.5, 50, '../mediaRes/textures/mars.png', marsData.distanceFromSun, 0, 0);
 
-            jupiter = createPlanet(14, 50, 'mediaRes/textures/jupiter.png', jupiterData.distanceFromSun, 0, 0);
+            jupiter = createPlanet(14, 50, '../mediaRes/textures/jupiter.png', jupiterData.distanceFromSun, 0, 0);
 
-            saturn = createPlanet(11.5, 50, 'mediaRes/textures/saturn.png', saturnData.distanceFromSun, 0, 0);
-            saturn_ring = createRing(13, 19, 30, 'mediaRes/textures/saturnringcolor.jpg', (saturn.position.x), 0, 0);
+            saturn = createPlanet(11.5, 50, '../mediaRes/textures/saturn.png', saturnData.distanceFromSun, 0, 0);
+            saturn_ring = createRing(13, 19, 30, '../mediaRes/textures/saturnringcolor.jpg', (saturn.position.x), 0, 0);
             saturn_ring.rotation.x = Math.PI/1.5;
 
-            uranus = createPlanet(8, 50, 'mediaRes/textures/uranus.png', uranusData.distanceFromSun, 0, 0);
+            uranus = createPlanet(8, 50, '../mediaRes/textures/uranus.png', uranusData.distanceFromSun, 0, 0);
 
-            neptune = createPlanet(8.8, 50, 'mediaRes/textures/neptune.png', neptuneData.distanceFromSun, 0, 0);
+            neptune = createPlanet(8.8, 50, '../mediaRes/textures/neptune.png', neptuneData.distanceFromSun, 0, 0);
 
             scene.add(sun);
             scene.add(mercury);
