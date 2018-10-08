@@ -379,13 +379,13 @@
         function getSkybox(){
             var sceneTexture,skybox;
             sceneTexture = [
-               '../mediaRes/cubeMap/px.png','../mediaRes/cubeMap/nx.png',
-               '../mediaRes/cubeMap/py.png','../mediaRes/cubeMap/ny.png',
-               '../mediaRes/cubeMap/pz.png','../mediaRes/cubeMap/nz.png'
+               '../mediaRes/cubeMap/_right.png','../mediaRes/cubeMap/_left.png',
+               '../mediaRes/cubeMap/_up.png','../mediaRes/cubeMap/_down.png',
+               '../mediaRes/cubeMap/_front.png','../mediaRes/cubeMap/_back.png'
             ];
 
             skybox = new THREE.CubeTextureLoader().load(sceneTexture);
-            //skybox.format = THREE.RGBFormat;
+            skybox.format = THREE.RGBFormat;
             return skybox;
         }
 
